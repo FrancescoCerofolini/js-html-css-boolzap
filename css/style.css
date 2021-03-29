@@ -1,0 +1,236 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-image: linear-gradient(to bottom, #009688 0px, #009688 15vh, #DDDBD1 15vh, #D2DBDC 100%);
+}
+
+img {
+    height: 60px;
+    border-radius: 50px;
+}
+
+i {
+    cursor: pointer;
+}
+
+/* utility class per il float left e right */
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+/* fine classi utility per il float flex e right */
+
+.container {
+    width: 80%;
+    min-width: 950px;
+    height: 95%;
+    margin: auto;
+}
+
+/* tutta la porzione a sinistra con i contatti */
+.sidebar {
+    border-right: 1px solid black;
+    height: 100%;
+    width: 30%;
+}
+
+.sidebar-blue {
+    width: 100%;
+    height: 60px;
+
+    background-color: #8EDAFC;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.notifiche-logo,
+.notifiche-link {
+    display: inline-block;
+    padding: 15px;
+}
+
+.notifiche-logo>i {
+    border-radius: 50px;
+    border: 1px solid white;
+    background-color: white;
+    color: #8EDAFC;
+
+    /* padding-right: 20px; */
+}
+
+.sidebar-superior {
+    height: 65px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #EAEAEA;
+}
+
+.items-sidebar {
+    height: 65px;
+    vertical-align: middle;
+    line-height: 65px;
+}
+
+.items-sidebar>span {
+    vertical-align: top;
+}
+
+.items-sidebar>i {
+    padding: 0 10px;
+    vertical-align: middle;
+    line-height: 65px;
+    color: #B1B1B1;
+}
+
+.scroll {
+    height: calc(100% - 65px - 65px - 65px);
+    overflow-y: scroll;
+    background-color: white;
+}
+
+.input-search {
+    width: 100%;
+    height: 65px;
+    padding: 20px;
+    background-color: white;
+}
+
+input {
+    width: 200px;
+    margin-left: 15px;
+    border: none;
+    height: 20px;
+}
+
+.contact {
+    border: 1px solid lightgrey;
+    cursor: pointer;
+}
+
+/* fine della porzione sidebar  */
+/* tutt la posizione centrale divisa in tre parti superiore centrale inferiore */
+.main {
+    height: 100%;
+    width: 70%;
+    background-image: url("img/mine.jpg");
+    /* overflow-y: scroll; */
+    position: relative;
+
+}
+
+.box-superior {
+    width: 100%;
+    height: 65px;
+    background-color: #EAEAEA;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* .items-box>small{
+  vertical-align:top;
+} */
+.nome,
+.last-access {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.last-access {
+    vertical-align: bottom;
+    margin-left: -54px;
+
+}
+
+.items-box {
+    height: 65px;
+    line-height: 65px;
+    width: 50%;
+}
+
+.items-box>i {
+    padding: 0 10px;
+    color: #B1B1B4;
+    float: right;
+    line-height: 65px;
+}
+
+
+.box-center {
+    width: 100%;
+    height: calc(100% - 130px);
+    overflow-y: scroll;
+}
+
+/* le classi devono chiamarsi uguali al valore nell oggetto status senno non funziona  */
+.sent {
+    width: 150px;
+    height: 52px;
+
+    float: right;
+    background-color: lightgreen;
+    border-radius: 5px;
+    clear: both;
+    margin: 15px 15px;
+    text-align: center;
+}
+
+.received {
+    width: 150px;
+    height: 50px;
+
+    float: left;
+    background-color: white;
+    border-radius: 5px;
+    clear: both;
+    margin: 15px 15px;
+    text-align: center;
+}
+
+
+.box-down {
+    width: 100%;
+    height: 65px;
+
+    background-color: #F3EEEA;
+}
+
+.footer-flex {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.items-footer>i {
+    color: #B1B1B4;
+}
+
+.items-footer {
+    height: 60px;
+    margin-top: 20px;
+}
+
+.write-msg {
+    width: 80%;
+    height: 50px;
+    padding: 5 15px;
+}

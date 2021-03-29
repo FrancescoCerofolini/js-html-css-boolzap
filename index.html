@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+  </head>
+  <body>
+
+
+    <div id="root" class="container">
+      <!-- contenitore a destra  -->
+
+      <div class="sidebar float-left">
+
+        <div class="sidebar-superior">
+            <div class="items-sidebar">
+            <img src="img/avatar_8.jpg" alt="">
+            <span>Francesco</span>
+            </div>
+            <div class="items-sidebar">
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+        </div>
+
+        <div class="sidebar-blue">
+          <div class="notifiche-logo">
+            <i class="fas fa-bell-slash fa-2x"></i>
+          </div>
+          <div class="notifiche-link">
+            <span>ricevi notifiche di nuovi msg</span><br>
+            <a href="#">Attiva notifiche desktop</a>
+          </div>
+
+
+
+        </div>
+
+        <div class="input-search">
+          <span><i class="fas fa-search"></i></span>
+          <span><input class="input-contact" type="text" placeholder=" cerca o inizia una nuova chat" v-model="cerca" @keyup="inputSearch"></span>
+        </div>
+
+        <div class="scroll">
+        <div class="contatti"
+          v-for ="(element,index) in contacts"
+          v-if="element.visible">
+          <div class="contact" @click="cambiaContatto(index)">
+          <img :src="'img/avatar' + element.avatar + '.jpg'" alt="">
+          <span>{{element.name}}</span>
+          <span>{{ultimoAccessoNoncliccato(index)}}</span>
+
+
+
+         </div>
+        </div>
+
+      </div>
+      </div>
+      <!-- fine contenitore a destra -->
+
+     <div class="main float-left">
+       <div class="box-superior">
+         <div class="sidebar-superior">
+
+           <div class="items-box">
+            <img :src="'img/avatar' + contacts[contattoCliccato].avatar + '.jpg'" alt="">
+            <div class="nome">{{contacts[contattoCliccato].name}}</div>
+
+             <div class="last-access">Access{{ ultimoAccesso(contattoCliccato) }}</div>
+           </div>
+
+             <div class="items-box">
+               <i class="fas fa-ellipsis-v"></i>
+               <i class="fas fa-paperclip"></i>
+               <i class="fas fa-search"></i>
+
+             </div>
+         </div>
+
+
+       </div>
+
+       <div class="box-center">
+         <div v-for="element in contacts[contattoCliccato].messages"
+
+         :class="{
+           received: (element.status === 'received'),
+           sent: (element.status === 'sent'),
+         }"
+         >
+         <!-- stampo il testo  -->
+           <span>{{element.text}}</span>
+           <!-- stampo la data di invio  -->
+
+
+
+
+         </div>
+       </div>
+
+       <div class="box-down">
+         <div class="footer-flex">
+            <div class="items-footer">
+              <i class="far fa-smile fa-2x"></i>
+            </div>
+
+
+              <input class="write-msg"  placeholder="scrivi un messaggio"  v-model="utenteMsg" v-on:keyup.enter="addMsg"></input>
+
+
+
+
+
+             <div class="items-footer">
+               <i class="fas fa-microphone fa-2x"></i>
+             </div>
+          </div>
+
+       </div>
+     </div>
+
+
+
+
+
+     <!-- fine conteiner  -->
+    </div>
+
+
+
+
+
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
